@@ -1,9 +1,10 @@
 #Thu vien chua pygame
 import pygame
-pygame.init
+pygame.init( )
 #Hang trong luc
-p = 0.2
-bird_y = 0
+p = 0.2 
+bird_y = 0 #vi tri bat len 
+score=0 #Khoi tao diem
 #Tieu de va icon game
 pygame.display.set_caption('Game Test')
 icon = pygame.image.load(r'E:\firstpythongame\game1\assets\yellowbird-downflap.png')
@@ -23,6 +24,12 @@ bird_hcn = bird.get_rect(center=(100,386))
 #Cua so Terminal
 screen = pygame.display.set_mode((432,768))  #Kich thuoc man
 
+#score
+game_font = pygame.font.Font(r'E:\firstpythongame\game1\04B_19.TTF',40)
+def score_view():
+    score_f = game_font.render(str(int(score)),True,(255,255,255))
+    score_hcn = score_f.get_rect(center=(200,100))
+    screen.blit(score_f,score_hcn)
 #Vong lap(giu cua so terminal luon chay khi chua co ngoai le)
 running = True
 while running:
@@ -42,4 +49,6 @@ while running:
     screen.blit(bird,bird_hcn)
     bird_y += p
     bird_hcn.centery += bird_y
+    score+=0.01
+    score_view()
     pygame.display.update()
