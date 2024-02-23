@@ -94,7 +94,4 @@ while running:
         score_view()
     pygame.display.update()
 
-
-
     #the last of upadte
-    
