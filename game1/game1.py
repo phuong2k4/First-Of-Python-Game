@@ -93,3 +93,8 @@ while running:
         screen.blit(screen_out,screen_out_hcn)
         score_view()
     pygame.display.update()
+
+
+
+    #the last of upadte
+    
